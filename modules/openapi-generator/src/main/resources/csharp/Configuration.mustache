@@ -1,13 +1,13 @@
 {{>partial_header}}
 using System;
-using System.Reflection;
+// using System.Reflection;
 {{^net35}}
 using System.Collections.Concurrent;
 {{/net35}}
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
+// using System.Linq;
+// using System.Text;
 
 namespace {{packageName}}.Client
 {
@@ -216,7 +216,7 @@ namespace {{packageName}}.Client
             }
         }
 
-        private String _basePath = null;
+        private string _basePath = null;
         /// <summary>
         /// Gets or sets the base path for API access.
         /// </summary>
@@ -409,9 +409,9 @@ namespace {{packageName}}.Client
         /// <summary>
         /// Returns a string with essential information for debugging.
         /// </summary>
-        public static String ToDebugReport()
+        public static string ToDebugReport()
         {
-            String report = "C# SDK ({{{packageName}}}) Debug Report:\n";
+            var report = "C# SDK ({{{packageName}}}) Debug Report:\n";
             {{^netStandard}}
             {{^supportsUWP}}
             report += "    OS: " + System.Environment.OSVersion + "\n";

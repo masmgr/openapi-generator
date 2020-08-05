@@ -1,9 +1,9 @@
 {{>partial_header}}
 
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
+// using System.Collections.Generic;
+// using System.Collections.ObjectModel;
+// using System.Linq;
 {{#netStandard}}
 using RestSharp.Portable;
 {{/netStandard}}
@@ -28,7 +28,7 @@ namespace {{packageName}}.Client
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        String GetBasePath();
+        string GetBasePath();
         
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.

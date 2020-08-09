@@ -31,9 +31,9 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// Place an order for a pet 
         /// </summary>
-        /// <param name="body">order placed for purchasing the pet</param>
+        /// <param name="order">order placed for purchasing the pet</param>
         /// <returns>Order</returns>
-        Order PlaceOrder (Order body);
+        Order PlaceOrder (Order order);
     }
   
     /// <summary>
@@ -58,7 +58,7 @@ namespace Org.OpenAPITools.Api
         /// Initializes a new instance of the <see cref="StoreApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public StoreApi(String basePath)
+        public StoreApi(string basePath)
         {
             this.ApiClient = new ApiClient(basePath);
         }
@@ -68,7 +68,7 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public void SetBasePath(String basePath)
+        public void SetBasePath(string basePath)
         {
             this.ApiClient.BasePath = basePath;
         }
@@ -78,7 +78,7 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public String GetBasePath(String basePath)
+        public string GetBasePath(string basePath)
         {
             return this.ApiClient.BasePath;
         }
@@ -105,15 +105,15 @@ namespace Org.OpenAPITools.Api
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "orderId" + "}", ApiClient.ParameterToString(orderId));
     
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            string[] authSettings = new string[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -137,15 +137,15 @@ namespace Org.OpenAPITools.Api
             var path = "/store/inventory";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] { "api_key" };
+            string[] authSettings = new string[] { "api_key" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -174,15 +174,15 @@ namespace Org.OpenAPITools.Api
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "orderId" + "}", ApiClient.ParameterToString(orderId));
     
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            string[] authSettings = new string[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -198,28 +198,28 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// Place an order for a pet 
         /// </summary>
-        /// <param name="body">order placed for purchasing the pet</param> 
+        /// <param name="order">order placed for purchasing the pet</param> 
         /// <returns>Order</returns>            
-        public Order PlaceOrder (Order body)
+        public Order PlaceOrder (Order order)
         {
             
-            // verify the required parameter 'body' is set
-            if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling PlaceOrder");
+            // verify the required parameter 'order' is set
+            if (order == null) throw new ApiException(400, "Missing required parameter 'order' when calling PlaceOrder");
             
     
             var path = "/store/order";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
-                                                postBody = ApiClient.Serialize(body); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(order); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            string[] authSettings = new string[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

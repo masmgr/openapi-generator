@@ -46,8 +46,8 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Created user object</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateUserWithHttpInfo (User body);
+        /// <returns>ApiResponse of object(void)</returns>
+        ApiResponse<object> CreateUserWithHttpInfo (User body);
         /// <summary>
         /// Creates list of users with given input array
         /// </summary>
@@ -67,8 +67,8 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of user object</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateUsersWithArrayInputWithHttpInfo (List<User> body);
+        /// <returns>ApiResponse of object(void)</returns>
+        ApiResponse<object> CreateUsersWithArrayInputWithHttpInfo (List<User> body);
         /// <summary>
         /// Creates list of users with given input array
         /// </summary>
@@ -88,8 +88,8 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of user object</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateUsersWithListInputWithHttpInfo (List<User> body);
+        /// <returns>ApiResponse of object(void)</returns>
+        ApiResponse<object> CreateUsersWithListInputWithHttpInfo (List<User> body);
         /// <summary>
         /// Delete user
         /// </summary>
@@ -109,8 +109,8 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">The name that needs to be deleted</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteUserWithHttpInfo (string username);
+        /// <returns>ApiResponse of object(void)</returns>
+        ApiResponse<object> DeleteUserWithHttpInfo (string username);
         /// <summary>
         /// Get user by user name
         /// </summary>
@@ -172,8 +172,8 @@ namespace Org.OpenAPITools.Api
         /// 
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> LogoutUserWithHttpInfo ();
+        /// <returns>ApiResponse of object(void)</returns>
+        ApiResponse<object> LogoutUserWithHttpInfo ();
         /// <summary>
         /// Updated user
         /// </summary>
@@ -195,8 +195,8 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">name that need to be deleted</param>
         /// <param name="body">Updated user object</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateUserWithHttpInfo (string username, User body);
+        /// <returns>ApiResponse of object(void)</returns>
+        ApiResponse<object> UpdateUserWithHttpInfo (string username, User body);
         #endregion Synchronous Operations
     }
 
@@ -226,7 +226,7 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Created user object</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateUserAsyncWithHttpInfo (User body);
+        System.Threading.Tasks.Task<ApiResponse<object>> CreateUserAsyncWithHttpInfo (User body);
         /// <summary>
         /// Creates list of users with given input array
         /// </summary>
@@ -247,7 +247,7 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of user object</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateUsersWithArrayInputAsyncWithHttpInfo (List<User> body);
+        System.Threading.Tasks.Task<ApiResponse<object>> CreateUsersWithArrayInputAsyncWithHttpInfo (List<User> body);
         /// <summary>
         /// Creates list of users with given input array
         /// </summary>
@@ -268,7 +268,7 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of user object</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateUsersWithListInputAsyncWithHttpInfo (List<User> body);
+        System.Threading.Tasks.Task<ApiResponse<object>> CreateUsersWithListInputAsyncWithHttpInfo (List<User> body);
         /// <summary>
         /// Delete user
         /// </summary>
@@ -289,7 +289,7 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">The name that needs to be deleted</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUserAsyncWithHttpInfo (string username);
+        System.Threading.Tasks.Task<ApiResponse<object>> DeleteUserAsyncWithHttpInfo (string username);
         /// <summary>
         /// Get user by user name
         /// </summary>
@@ -352,7 +352,7 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> LogoutUserAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<object>> LogoutUserAsyncWithHttpInfo ();
         /// <summary>
         /// Updated user
         /// </summary>
@@ -375,7 +375,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="username">name that need to be deleted</param>
         /// <param name="body">Updated user object</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateUserAsyncWithHttpInfo (string username, User body);
+        System.Threading.Tasks.Task<ApiResponse<object>> UpdateUserAsyncWithHttpInfo (string username, User body);
         #endregion Asynchronous Operations
     }
 
@@ -406,7 +406,7 @@ namespace Org.OpenAPITools.Api
         /// Initializes a new instance of the <see cref="UserApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public UserApi(String basePath)
+        public UserApi(string basePath)
         {
             this.Configuration = Org.OpenAPITools.Client.Configuration.MergeConfigurations(
                 Org.OpenAPITools.Client.GlobalConfiguration.Instance,
@@ -469,7 +469,7 @@ namespace Org.OpenAPITools.Api
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
-        public String GetBasePath()
+        public string GetBasePath()
         {
             return this.Configuration.BasePath;
         }
@@ -512,8 +512,8 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Created user object</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> CreateUserWithHttpInfo (User body)
+        /// <returns>ApiResponse of object(void)</returns>
+        public Org.OpenAPITools.Client.ApiResponse<object> CreateUserWithHttpInfo (User body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -521,11 +521,11 @@ namespace Org.OpenAPITools.Api
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -538,7 +538,7 @@ namespace Org.OpenAPITools.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/user", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<object>("/user", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -567,7 +567,7 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">Created user object</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> CreateUserAsyncWithHttpInfo (User body)
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<object>> CreateUserAsyncWithHttpInfo (User body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -576,11 +576,11 @@ namespace Org.OpenAPITools.Api
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -595,7 +595,7 @@ namespace Org.OpenAPITools.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/user", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<object>("/user", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -622,8 +622,8 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of user object</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> CreateUsersWithArrayInputWithHttpInfo (List<User> body)
+        /// <returns>ApiResponse of object(void)</returns>
+        public Org.OpenAPITools.Client.ApiResponse<object> CreateUsersWithArrayInputWithHttpInfo (List<User> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -631,11 +631,11 @@ namespace Org.OpenAPITools.Api
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -648,7 +648,7 @@ namespace Org.OpenAPITools.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/user/createWithArray", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<object>("/user/createWithArray", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -677,7 +677,7 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of user object</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> CreateUsersWithArrayInputAsyncWithHttpInfo (List<User> body)
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<object>> CreateUsersWithArrayInputAsyncWithHttpInfo (List<User> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -686,11 +686,11 @@ namespace Org.OpenAPITools.Api
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -705,7 +705,7 @@ namespace Org.OpenAPITools.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/user/createWithArray", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<object>("/user/createWithArray", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -732,8 +732,8 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of user object</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> CreateUsersWithListInputWithHttpInfo (List<User> body)
+        /// <returns>ApiResponse of object(void)</returns>
+        public Org.OpenAPITools.Client.ApiResponse<object> CreateUsersWithListInputWithHttpInfo (List<User> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -741,11 +741,11 @@ namespace Org.OpenAPITools.Api
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -758,7 +758,7 @@ namespace Org.OpenAPITools.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/user/createWithList", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<object>("/user/createWithList", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -787,7 +787,7 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body">List of user object</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> CreateUsersWithListInputAsyncWithHttpInfo (List<User> body)
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<object>> CreateUsersWithListInputAsyncWithHttpInfo (List<User> body)
         {
             // verify the required parameter 'body' is set
             if (body == null)
@@ -796,11 +796,11 @@ namespace Org.OpenAPITools.Api
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -815,7 +815,7 @@ namespace Org.OpenAPITools.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/user/createWithList", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<object>("/user/createWithList", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -842,8 +842,8 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">The name that needs to be deleted</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> DeleteUserWithHttpInfo (string username)
+        /// <returns>ApiResponse of object(void)</returns>
+        public Org.OpenAPITools.Client.ApiResponse<object> DeleteUserWithHttpInfo (string username)
         {
             // verify the required parameter 'username' is set
             if (username == null)
@@ -851,11 +851,11 @@ namespace Org.OpenAPITools.Api
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -868,7 +868,7 @@ namespace Org.OpenAPITools.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Object>("/user/{username}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<object>("/user/{username}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -897,7 +897,7 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">The name that needs to be deleted</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> DeleteUserAsyncWithHttpInfo (string username)
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<object>> DeleteUserAsyncWithHttpInfo (string username)
         {
             // verify the required parameter 'username' is set
             if (username == null)
@@ -906,11 +906,11 @@ namespace Org.OpenAPITools.Api
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -925,7 +925,7 @@ namespace Org.OpenAPITools.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/user/{username}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<object>("/user/{username}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -962,11 +962,11 @@ namespace Org.OpenAPITools.Api
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/xml",
                 "application/json"
             };
@@ -1020,11 +1020,11 @@ namespace Org.OpenAPITools.Api
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/xml",
                 "application/json"
             };
@@ -1084,11 +1084,11 @@ namespace Org.OpenAPITools.Api
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/xml",
                 "application/json"
             };
@@ -1149,11 +1149,11 @@ namespace Org.OpenAPITools.Api
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
                 "application/xml",
                 "application/json"
             };
@@ -1196,16 +1196,16 @@ namespace Org.OpenAPITools.Api
         /// Logs out current logged in user session 
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> LogoutUserWithHttpInfo ()
+        /// <returns>ApiResponse of object(void)</returns>
+        public Org.OpenAPITools.Client.ApiResponse<object> LogoutUserWithHttpInfo ()
         {
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1217,7 +1217,7 @@ namespace Org.OpenAPITools.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/user/logout", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<object>("/user/logout", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1244,16 +1244,16 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> LogoutUserAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<object>> LogoutUserAsyncWithHttpInfo ()
         {
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -1267,7 +1267,7 @@ namespace Org.OpenAPITools.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/user/logout", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<object>("/user/logout", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1296,8 +1296,8 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">name that need to be deleted</param>
         /// <param name="body">Updated user object</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> UpdateUserWithHttpInfo (string username, User body)
+        /// <returns>ApiResponse of object(void)</returns>
+        public Org.OpenAPITools.Client.ApiResponse<object> UpdateUserWithHttpInfo (string username, User body)
         {
             // verify the required parameter 'username' is set
             if (username == null)
@@ -1309,11 +1309,11 @@ namespace Org.OpenAPITools.Api
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
             var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1327,7 +1327,7 @@ namespace Org.OpenAPITools.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<Object>("/user/{username}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<object>("/user/{username}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1358,7 +1358,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="username">name that need to be deleted</param>
         /// <param name="body">Updated user object</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> UpdateUserAsyncWithHttpInfo (string username, User body)
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<object>> UpdateUserAsyncWithHttpInfo (string username, User body)
         {
             // verify the required parameter 'username' is set
             if (username == null)
@@ -1371,11 +1371,11 @@ namespace Org.OpenAPITools.Api
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
-            String[] _contentTypes = new String[] {
+            string[] _contentTypes = new string[] {
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            string[] _accepts = new string[] {
             };
 
 
@@ -1391,7 +1391,7 @@ namespace Org.OpenAPITools.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/user/{username}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<object>("/user/{username}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {

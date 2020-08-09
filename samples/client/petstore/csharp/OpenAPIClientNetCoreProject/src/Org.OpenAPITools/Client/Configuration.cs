@@ -219,7 +219,7 @@ namespace Org.OpenAPITools.Client
             }
         }
 
-        private String _basePath = null;
+        private string _basePath = null;
         /// <summary>
         /// Gets or sets the base path for API access.
         /// </summary>
@@ -410,9 +410,9 @@ namespace Org.OpenAPITools.Client
         /// <summary>
         /// Returns a string with essential information for debugging.
         /// </summary>
-        public static String ToDebugReport()
+        public static string ToDebugReport()
         {
-            String report = "C# SDK (Org.OpenAPITools) Debug Report:\n";
+            string report = "C# SDK (Org.OpenAPITools) Debug Report:\n";
             report += "    OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "\n";
             report += "    Version of the API: 1.0.0\n";
             report += "    SDK Package Version: 1.0.0\n";

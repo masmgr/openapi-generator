@@ -2,6 +2,8 @@ README.md
 compile-mono.sh
 docs/ApiResponse.md
 docs/Category.md
+docs/InlineObject.md
+docs/InlineObject1.md
 docs/Order.md
 docs/Pet.md
 docs/PetApi.md
@@ -17,6 +19,8 @@ src/main/CsharpDotNet2/Org/OpenAPITools/Client/ApiException.cs
 src/main/CsharpDotNet2/Org/OpenAPITools/Client/Configuration.cs
 src/main/CsharpDotNet2/Org/OpenAPITools/Model/ApiResponse.cs
 src/main/CsharpDotNet2/Org/OpenAPITools/Model/Category.cs
+src/main/CsharpDotNet2/Org/OpenAPITools/Model/InlineObject.cs
+src/main/CsharpDotNet2/Org/OpenAPITools/Model/InlineObject1.cs
 src/main/CsharpDotNet2/Org/OpenAPITools/Model/Order.cs
 src/main/CsharpDotNet2/Org/OpenAPITools/Model/Pet.cs
 src/main/CsharpDotNet2/Org/OpenAPITools/Model/Tag.cs

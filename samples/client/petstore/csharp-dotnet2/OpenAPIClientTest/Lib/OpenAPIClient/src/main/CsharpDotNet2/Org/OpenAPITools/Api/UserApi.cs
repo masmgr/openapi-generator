@@ -14,21 +14,21 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// Create user This can only be done by the logged in user.
         /// </summary>
-        /// <param name="body">Created user object</param>
+        /// <param name="user">Created user object</param>
         /// <returns></returns>
-        void CreateUser (User body);
+        void CreateUser (User user);
         /// <summary>
         /// Creates list of users with given input array 
         /// </summary>
-        /// <param name="body">List of user object</param>
+        /// <param name="user">List of user object</param>
         /// <returns></returns>
-        void CreateUsersWithArrayInput (List<User> body);
+        void CreateUsersWithArrayInput (List<User> user);
         /// <summary>
         /// Creates list of users with given input array 
         /// </summary>
-        /// <param name="body">List of user object</param>
+        /// <param name="user">List of user object</param>
         /// <returns></returns>
-        void CreateUsersWithListInput (List<User> body);
+        void CreateUsersWithListInput (List<User> user);
         /// <summary>
         /// Delete user This can only be done by the logged in user.
         /// </summary>
@@ -57,9 +57,9 @@ namespace Org.OpenAPITools.Api
         /// Updated user This can only be done by the logged in user.
         /// </summary>
         /// <param name="username">name that need to be deleted</param>
-        /// <param name="body">Updated user object</param>
+        /// <param name="user">Updated user object</param>
         /// <returns></returns>
-        void UpdateUser (string username, User body);
+        void UpdateUser (string username, User user);
     }
   
     /// <summary>
@@ -84,7 +84,7 @@ namespace Org.OpenAPITools.Api
         /// Initializes a new instance of the <see cref="UserApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public UserApi(String basePath)
+        public UserApi(string basePath)
         {
             this.ApiClient = new ApiClient(basePath);
         }
@@ -94,7 +94,7 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public void SetBasePath(String basePath)
+        public void SetBasePath(string basePath)
         {
             this.ApiClient.BasePath = basePath;
         }
@@ -104,7 +104,7 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public String GetBasePath(String basePath)
+        public string GetBasePath(string basePath)
         {
             return this.ApiClient.BasePath;
         }
@@ -118,28 +118,28 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// Create user This can only be done by the logged in user.
         /// </summary>
-        /// <param name="body">Created user object</param> 
+        /// <param name="user">Created user object</param> 
         /// <returns></returns>            
-        public void CreateUser (User body)
+        public void CreateUser (User user)
         {
             
-            // verify the required parameter 'body' is set
-            if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling CreateUser");
+            // verify the required parameter 'user' is set
+            if (user == null) throw new ApiException(400, "Missing required parameter 'user' when calling CreateUser");
             
     
             var path = "/user";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
-                                                postBody = ApiClient.Serialize(body); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(user); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            string[] authSettings = new string[] { "api_key" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -155,28 +155,28 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// Creates list of users with given input array 
         /// </summary>
-        /// <param name="body">List of user object</param> 
+        /// <param name="user">List of user object</param> 
         /// <returns></returns>            
-        public void CreateUsersWithArrayInput (List<User> body)
+        public void CreateUsersWithArrayInput (List<User> user)
         {
             
-            // verify the required parameter 'body' is set
-            if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling CreateUsersWithArrayInput");
+            // verify the required parameter 'user' is set
+            if (user == null) throw new ApiException(400, "Missing required parameter 'user' when calling CreateUsersWithArrayInput");
             
     
             var path = "/user/createWithArray";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
-                                                postBody = ApiClient.Serialize(body); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(user); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            string[] authSettings = new string[] { "api_key" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -192,28 +192,28 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// Creates list of users with given input array 
         /// </summary>
-        /// <param name="body">List of user object</param> 
+        /// <param name="user">List of user object</param> 
         /// <returns></returns>            
-        public void CreateUsersWithListInput (List<User> body)
+        public void CreateUsersWithListInput (List<User> user)
         {
             
-            // verify the required parameter 'body' is set
-            if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling CreateUsersWithListInput");
+            // verify the required parameter 'user' is set
+            if (user == null) throw new ApiException(400, "Missing required parameter 'user' when calling CreateUsersWithListInput");
             
     
             var path = "/user/createWithList";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
-                                                postBody = ApiClient.Serialize(body); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(user); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            string[] authSettings = new string[] { "api_key" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -242,15 +242,15 @@ namespace Org.OpenAPITools.Api
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username));
     
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            string[] authSettings = new string[] { "api_key" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -279,15 +279,15 @@ namespace Org.OpenAPITools.Api
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username));
     
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            string[] authSettings = new string[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -319,17 +319,17 @@ namespace Org.OpenAPITools.Api
             var path = "/user/login";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
              if (username != null) queryParams.Add("username", ApiClient.ParameterToString(username)); // query parameter
  if (password != null) queryParams.Add("password", ApiClient.ParameterToString(password)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            string[] authSettings = new string[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -353,15 +353,15 @@ namespace Org.OpenAPITools.Api
             var path = "/user/logout";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            string[] authSettings = new string[] { "api_key" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -378,32 +378,32 @@ namespace Org.OpenAPITools.Api
         /// Updated user This can only be done by the logged in user.
         /// </summary>
         /// <param name="username">name that need to be deleted</param> 
-        /// <param name="body">Updated user object</param> 
+        /// <param name="user">Updated user object</param> 
         /// <returns></returns>            
-        public void UpdateUser (string username, User body)
+        public void UpdateUser (string username, User user)
         {
             
             // verify the required parameter 'username' is set
             if (username == null) throw new ApiException(400, "Missing required parameter 'username' when calling UpdateUser");
             
-            // verify the required parameter 'body' is set
-            if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling UpdateUser");
+            // verify the required parameter 'user' is set
+            if (user == null) throw new ApiException(400, "Missing required parameter 'user' when calling UpdateUser");
             
     
             var path = "/user/{username}";
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "username" + "}", ApiClient.ParameterToString(username));
     
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
-                                                postBody = ApiClient.Serialize(body); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(user); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            string[] authSettings = new string[] { "api_key" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

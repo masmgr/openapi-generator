@@ -14,9 +14,9 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// Add a new pet to the store 
         /// </summary>
-        /// <param name="body">Pet object that needs to be added to the store</param>
-        /// <returns></returns>
-        void AddPet (Pet body);
+        /// <param name="pet">Pet object that needs to be added to the store</param>
+        /// <returns>Pet</returns>
+        Pet AddPet (Pet pet);
         /// <summary>
         /// Deletes a pet 
         /// </summary>
@@ -45,9 +45,9 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// Update an existing pet 
         /// </summary>
-        /// <param name="body">Pet object that needs to be added to the store</param>
-        /// <returns></returns>
-        void UpdatePet (Pet body);
+        /// <param name="pet">Pet object that needs to be added to the store</param>
+        /// <returns>Pet</returns>
+        Pet UpdatePet (Pet pet);
         /// <summary>
         /// Updates a pet in the store with form data 
         /// </summary>
@@ -88,7 +88,7 @@ namespace Org.OpenAPITools.Api
         /// Initializes a new instance of the <see cref="PetApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public PetApi(String basePath)
+        public PetApi(string basePath)
         {
             this.ApiClient = new ApiClient(basePath);
         }
@@ -98,7 +98,7 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public void SetBasePath(String basePath)
+        public void SetBasePath(string basePath)
         {
             this.ApiClient.BasePath = basePath;
         }
@@ -108,7 +108,7 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public String GetBasePath(String basePath)
+        public string GetBasePath(string basePath)
         {
             return this.ApiClient.BasePath;
         }
@@ -122,28 +122,28 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// Add a new pet to the store 
         /// </summary>
-        /// <param name="body">Pet object that needs to be added to the store</param> 
-        /// <returns></returns>            
-        public void AddPet (Pet body)
+        /// <param name="pet">Pet object that needs to be added to the store</param> 
+        /// <returns>Pet</returns>            
+        public Pet AddPet (Pet pet)
         {
             
-            // verify the required parameter 'body' is set
-            if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling AddPet");
+            // verify the required parameter 'pet' is set
+            if (pet == null) throw new ApiException(400, "Missing required parameter 'pet' when calling AddPet");
             
     
             var path = "/pet";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
-                                                postBody = ApiClient.Serialize(body); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(pet); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "petstore_auth" };
+            string[] authSettings = new string[] { "petstore_auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -153,7 +153,7 @@ namespace Org.OpenAPITools.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling AddPet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return;
+            return (Pet) ApiClient.Deserialize(response.Content, typeof(Pet), response.Headers);
         }
     
         /// <summary>
@@ -173,16 +173,16 @@ namespace Org.OpenAPITools.Api
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "petId" + "}", ApiClient.ParameterToString(petId));
     
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                          if (apiKey != null) headerParams.Add("api_key", ApiClient.ParameterToString(apiKey)); // header parameter
                             
             // authentication setting, if any
-            String[] authSettings = new String[] { "petstore_auth" };
+            string[] authSettings = new string[] { "petstore_auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -210,16 +210,16 @@ namespace Org.OpenAPITools.Api
             var path = "/pet/findByStatus";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
              if (status != null) queryParams.Add("status", ApiClient.ParameterToString(status)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] { "petstore_auth" };
+            string[] authSettings = new string[] { "petstore_auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -247,16 +247,16 @@ namespace Org.OpenAPITools.Api
             var path = "/pet/findByTags";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
              if (tags != null) queryParams.Add("tags", ApiClient.ParameterToString(tags)); // query parameter
                                         
             // authentication setting, if any
-            String[] authSettings = new String[] { "petstore_auth" };
+            string[] authSettings = new string[] { "petstore_auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -285,15 +285,15 @@ namespace Org.OpenAPITools.Api
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "petId" + "}", ApiClient.ParameterToString(petId));
     
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] { "api_key" };
+            string[] authSettings = new string[] { "api_key" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -309,28 +309,28 @@ namespace Org.OpenAPITools.Api
         /// <summary>
         /// Update an existing pet 
         /// </summary>
-        /// <param name="body">Pet object that needs to be added to the store</param> 
-        /// <returns></returns>            
-        public void UpdatePet (Pet body)
+        /// <param name="pet">Pet object that needs to be added to the store</param> 
+        /// <returns>Pet</returns>            
+        public Pet UpdatePet (Pet pet)
         {
             
-            // verify the required parameter 'body' is set
-            if (body == null) throw new ApiException(400, "Missing required parameter 'body' when calling UpdatePet");
+            // verify the required parameter 'pet' is set
+            if (pet == null) throw new ApiException(400, "Missing required parameter 'pet' when calling UpdatePet");
             
     
             var path = "/pet";
             path = path.Replace("{format}", "json");
                 
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
-                                                postBody = ApiClient.Serialize(body); // http body (model) parameter
+                                                postBody = ApiClient.Serialize(pet); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] { "petstore_auth" };
+            string[] authSettings = new string[] { "petstore_auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -340,7 +340,7 @@ namespace Org.OpenAPITools.Api
             else if (((int)response.StatusCode) == 0)
                 throw new ApiException ((int)response.StatusCode, "Error calling UpdatePet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return;
+            return (Pet) ApiClient.Deserialize(response.Content, typeof(Pet), response.Headers);
         }
     
         /// <summary>
@@ -361,17 +361,17 @@ namespace Org.OpenAPITools.Api
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "petId" + "}", ApiClient.ParameterToString(petId));
     
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                                     if (name != null) formParams.Add("name", ApiClient.ParameterToString(name)); // form parameter
 if (status != null) formParams.Add("status", ApiClient.ParameterToString(status)); // form parameter
                 
             // authentication setting, if any
-            String[] authSettings = new String[] { "petstore_auth" };
+            string[] authSettings = new string[] { "petstore_auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
@@ -402,17 +402,17 @@ if (status != null) formParams.Add("status", ApiClient.ParameterToString(status)
             path = path.Replace("{format}", "json");
             path = path.Replace("{" + "petId" + "}", ApiClient.ParameterToString(petId));
     
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            var queryParams = new Dictionary<string, string>();
+            var headerParams = new Dictionary<string, string>();
+            var formParams = new Dictionary<string, string>();
+            var fileParams = new Dictionary<string, FileParameter>();
+            string postBody = null;
     
                                     if (additionalMetadata != null) formParams.Add("additionalMetadata", ApiClient.ParameterToString(additionalMetadata)); // form parameter
 if (file != null) fileParams.Add("file", ApiClient.ParameterToFile("file", file));
                 
             // authentication setting, if any
-            String[] authSettings = new String[] { "petstore_auth" };
+            string[] authSettings = new string[] { "petstore_auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);

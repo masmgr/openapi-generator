@@ -8,24 +8,24 @@
     "declaration": true,
  
     /* Additional Checks */
-     "noUnusedLocals": false,                /* Report errors on unused locals. */ // TODO: reenable (unused imports!)
-     "noUnusedParameters": false,            /* Report errors on unused parameters. */ // TODO: set to true again
-     "noImplicitReturns": true,             /* Report error when not all code paths in function return a value. */
-     "noFallthroughCasesInSwitch": true,    /* Report errors for fallthrough cases in switch statement. */
+    "noUnusedLocals": false,                /* Report errors on unused locals. */ // TODO: reenable (unused imports!)
+    "noUnusedParameters": false,            /* Report errors on unused parameters. */ // TODO: set to true again
+    "noImplicitReturns": true,             /* Report error when not all code paths in function return a value. */
+    "noFallthroughCasesInSwitch": true,    /* Report errors for fallthrough cases in switch statement. */
 
     "removeComments": true,
     "sourceMap": true,
     "outDir": "./dist",
-    "noLib": false
-    {{#platforms}},
+    "noLib": false{{#platforms}},{{/platforms}}
+    {{#platforms}}
     {{#node}}
     "lib": [ "es6" ]
     {{/node}}
     {{#browser}}
     "lib": [ "es6", "dom" ]
     {{/browser}}
-    {{/platforms}}
-    {{#useInversify}},
+    {{/platforms}}{{#useInversify}},{{/useInversify}}
+    {{#useInversify}}
     "experimentalDecorators": true
     {{/useInversify}}
   },

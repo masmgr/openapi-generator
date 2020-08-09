@@ -73,7 +73,7 @@ export class ObjectSerializer {
                 return expectedType; // the type does not have a discriminator. use it.
             } else {
                 if (data[discriminatorProperty]) {
-                    var discriminatorType = data[discriminatorProperty];
+                    const discriminatorType = data[discriminatorProperty];
                     if(typeMap[discriminatorType]){
                         return discriminatorType; // use the type given in the discriminator
                     } else {
@@ -95,15 +95,15 @@ export class ObjectSerializer {
             const _subType: string = type.replace("Array<", ""); // Array<Type> => Type>
             const subType = _subType.substring(0, _subType.length - 1); // Type> => Type
             const transformedData: any[] = [];
-            for (const index in data) {
+            for (const index of data) {
                 const date = data[index];
                 transformedData.push(ObjectSerializer.serialize(date, subType, format));
             }
             return transformedData;
         } else if (type === "Date") {
             if (format == "date") {
-                const _month = data.getMonth()+1
-                const month = _month < 10 ? "0" + _month.toString() : _month.toString()
+                const _month = data.getMonth() + 1;
+                const month = _month < 10 ? "0" + _month.toString() : _month.toString();
                 const _day = data.getDate();
                 const day = _day < 10 ? "0" + _day.toString() : _day.toString();
 
@@ -125,7 +125,7 @@ export class ObjectSerializer {
             // get the map for the correct type.
             const attributeTypes = typeMap[type].getAttributeTypeMap();
             const instance: {[index: string]: any} = {};
-            for (const index in attributeTypes) {
+            for (const index of attributeTypes) {
                 const attributeType = attributeTypes[index];
                 instance[attributeType.baseName] = ObjectSerializer.serialize(data[attributeType.name], attributeType.type, attributeType.format);
             }
@@ -144,7 +144,7 @@ export class ObjectSerializer {
             const _subType: string = type.replace("Array<", ""); // Array<Type> => Type>
             const subType = _subType.substring(0, _subType.length - 1); // Type> => Type
             const transformedData: any[] = [];
-            for (const index in data) {
+            for (const index of data) {
                 const date = data[index];
                 transformedData.push(ObjectSerializer.deserialize(date, subType, format));
             }
@@ -161,7 +161,7 @@ export class ObjectSerializer {
             }
             const instance = new typeMap[type]();
             const attributeTypes = typeMap[type].getAttributeTypeMap();
-            for (const index in attributeTypes) {
+            for (const index of attributeTypes) {
                 const attributeType = attributeTypes[index];
                 instance[attributeType.name] = ObjectSerializer.deserialize(data[attributeType.baseName], attributeType.type, attributeType.format);
             }

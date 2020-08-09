@@ -67,7 +67,7 @@ class URLParse {
         this.url = new URL(address);
     }
     public set(_part: 'query', obj: {[key: string]: string | undefined}) {
-        for (const key in obj) {
+        for (const key of obj) {
             const value = obj[key];
             if (value) {
               this.url.searchParams.set(key, value);

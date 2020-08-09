@@ -43,7 +43,7 @@ export class {{classname}}RequestFactory extends BaseAPIRequestFactory {
      {{/allParams}}
      */
     public async {{nickname}}({{#allParams}}{{paramName}}{{^required}}?{{/required}}: {{{dataType}}}, {{/allParams}}options?: Configuration): Promise<RequestContext> {
-		let config = options || this.configuration;
+		const config = options || this.configuration;
 		{{#allParams}}
 		
 		{{#required}}
@@ -61,7 +61,7 @@ export class {{classname}}RequestFactory extends BaseAPIRequestFactory {
 
 		// Make Request Context
     	const requestContext = config.baseServer.makeRequestContext(localVarPath, HttpMethod.{{httpMethod}});
-        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8")
+        requestContext.setHeaderParam("Accept", "application/json, */*;q=0.8");
 
         // Query Params
 		{{#queryParams}}
@@ -77,7 +77,7 @@ export class {{classname}}RequestFactory extends BaseAPIRequestFactory {
 	
 		// Form Params
 	    {{#hasFormParams}}
-		let localVarFormParams = new FormData();
+		const localVarFormParams = new FormData();
 		{{/hasFormParams}}	
 
 		{{#formParams}}
@@ -130,12 +130,9 @@ export class {{classname}}RequestFactory extends BaseAPIRequestFactory {
         requestContext.setBody(serializedBody);
 	    {{/bodyParam}}
 
-        {{#hasAuthMethods}}
-        let authMethod = null;
-        {{/hasAuthMethods}}
         // Apply auth methods
         {{#authMethods}}
-        authMethod = config.authMethods["{{name}}"]
+        const authMethod = config.authMethods["{{name}}"];
         if (authMethod) {
             await authMethod.applySecurityAuthentication(requestContext);
         }
@@ -217,7 +214,7 @@ export class {{classname}}ResponseProcessor {
             {{/returnType}}
         }
 
-        let body = response.body || "";
+        const body = response.body || "";
     	throw new ApiException<string>(response.httpStatusCode, "Unknown API Status Code!\nBody: \"" + body + "\"");
     }
 			

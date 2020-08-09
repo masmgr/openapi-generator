@@ -88,7 +88,7 @@ export class {{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}Authentication 
         context.{{#isKeyInHeader}}setHeaderParam{{/isKeyInHeader}}{{#isKeyInQuery}}addCookie{{/isKeyInQuery}}{{#isKeyInCookie}}setQueryParam{{/isKeyInCookie}}("{{keyParamName}}", this.apiKey);
         {{/isApiKey}}
         {{#isBasicBasic}}
-        let comb = this.username + ":" + this.password;
+        const comb = this.username + ":" + this.password;
         context.setHeaderParam("Authorization", "Basic " + btoa(comb));
         {{/isBasicBasic}}
         {{#isBasicBearer}}
@@ -104,35 +104,35 @@ export class {{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}Authentication 
 
 export type AuthMethods = {
     {{#authMethods}}
-    "{{name}}"?: SecurityAuthentication{{#hasMore}},{{/hasMore}}
+    {{name}}?: SecurityAuthentication;
     {{/authMethods}}
-}
+};
 {{#useInversify}}
 
 export const authMethodServices = {
     {{#authMethods}}
-    "{{name}}": {{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}Authentication{{#hasMore}},{{/hasMore}}
+    {{name}}: {{#lambda.pascalcase}}{{name}}{{/lambda.pascalcase}}Authentication;
     {{/authMethods}}
 }
 {{/useInversify}}
 
 export type ApiKeyConfiguration = string;
-export type HttpBasicConfiguration = { "username": string, "password": string };
+export type HttpBasicConfiguration = { username: string; password: string; };
 export type HttpBearerConfiguration = { tokenProvider: TokenProvider };
 export type OAuth2Configuration = string;
 
 export type AuthMethodsConfiguration = {
     {{#authMethods}}
-    "{{name}}"?: {{#isApiKey}}ApiKeyConfiguration{{/isApiKey}}{{#isBasicBasic}}HttpBasicConfiguration{{/isBasicBasic}}{{#isBasicBearer}}HttpBearerConfiguration{{/isBasicBearer}}{{#isOAuth}}OAuth2Configuration{{/isOAuth}}{{#hasMore}},{{/hasMore}}
+    {{name}}?: {{#isApiKey}}ApiKeyConfiguration{{/isApiKey}}{{#isBasicBasic}}HttpBasicConfiguration{{/isBasicBasic}}{{#isBasicBearer}}HttpBearerConfiguration{{/isBasicBearer}}{{#isOAuth}}OAuth2Configuration{{/isOAuth}};
     {{/authMethods}}
-}
+};
 
 /**
  * Creates the authentication methods from a swagger description.
  *
  */
 export function configureAuthMethods(config: AuthMethodsConfiguration | undefined): AuthMethods {
-    let authMethods: AuthMethods = {}
+    const authMethods: AuthMethods = {};
 
     if (!config) {
         return authMethods;

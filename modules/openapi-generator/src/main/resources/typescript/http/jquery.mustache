@@ -8,11 +8,11 @@ import * as $ from 'jquery';
 export class JQueryHttpLibrary implements HttpLibrary {
 
     public send(request: RequestContext): Observable<ResponseContext> {
-        let method = request.getHttpMethod().toString();
-        let body = request.getBody();
-        let headerParams = request.getHeaders()
+        const method = request.getHttpMethod().toString();
+        const body = request.getBody();
+        const headerParams = request.getHeaders()
 
-        let requestOptions: any = {
+        const requestOptions: any = {
             url: request.getUrl(),
             type: method,
             headers: request.getHeaders(),
@@ -72,11 +72,11 @@ export class JQueryHttpLibrary implements HttpLibrary {
 
     private getResponseHeaders(jqXHR: any): { [key: string]: string } {
         const responseHeaders: { [key: string]: string } = {};
-        var headers = jqXHR.getAllResponseHeaders();
+        const headers = jqXHR.getAllResponseHeaders();
         headers = headers.split("\n");
         headers.forEach(function (header: any) {
           header = header.split(": ");
-          var key = header.shift();
+          const key = header.shift();
           if (key.length == 0) return
           // chrome60+ force lowercase, other browsers can be different
           key = key.toLowerCase(); 

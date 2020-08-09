@@ -25,14 +25,14 @@ export interface {{classname}}{{operationIdCamelCase}}Request {
      * @type {{dataType}}
      * @memberof {{classname}}{{nickname}}
      */
-    {{paramName}}{{^required}}?{{/required}}: {{{dataType}}}
+    {{paramName}}{{^required}}?{{/required}}: {{{dataType}}};
     {{/allParams}}
 }
 
 {{/operation}}
 
 export class Object{{classname}} {
-    private api: Observable{{classname}}
+    private api: Observable{{classname}};
 
     public constructor(configuration: Configuration, requestFactory?: {{classname}}RequestFactory, responseProcessor?: {{classname}}ResponseProcessor) {
         this.api = new Observable{{classname}}(configuration, requestFactory, responseProcessor);

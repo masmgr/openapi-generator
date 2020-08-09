@@ -161,7 +161,7 @@ export class RequestContext {
     }
 
 	public setQueryParam(name: string, value: string) {
-        let queryObj = this.url.query;
+        const queryObj = this.url.query;
         queryObj[name] = value;
         this.url.set("query", queryObj);
     }
@@ -298,5 +298,5 @@ export function wrapHttpLibrary(promiseHttpLibrary: PromiseHttpLibrary): HttpLib
     send(request: RequestContext): Observable<ResponseContext> {
       return from(promiseHttpLibrary.send(request));
     }
-  }
+  };
 }

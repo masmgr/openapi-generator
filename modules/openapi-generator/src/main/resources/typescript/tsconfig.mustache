@@ -16,25 +16,24 @@
     "removeComments": true,
     "sourceMap": true,
     "outDir": "./dist",
-    "noLib": false,
-    {{#platforms}}
+    "noLib": false
+    {{#platforms}},
     {{#node}}
-    "lib": [ "es6" ],
+    "lib": [ "es6" ]
     {{/node}}
     {{#browser}}
-    "lib": [ "es6", "dom" ],
+    "lib": [ "es6", "dom" ]
     {{/browser}}
     {{/platforms}}
-    {{#useInversify}}
-    "experimentalDecorators": true,
+    {{#useInversify}},
+    "experimentalDecorators": true
     {{/useInversify}}
   },
   "exclude": [
-  	"dist",
+    "dist",
     "node_modules"
   ],
   "filesGlob": [
-    "./**/*.ts",
+    "./**/*.ts"
   ]
-  
 }

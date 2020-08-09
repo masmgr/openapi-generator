@@ -1,15 +1,15 @@
 // TODO: better import syntax?
 import { BaseAPIRequestFactory, RequiredError } from './baseapi{{extensionForDeno}}';
-import {Configuration} from '../configuration{{extensionForDeno}}';
-import { RequestContext, HttpMethod, ResponseContext, HttpFile} from '../http/http{{extensionForDeno}}';
+import { Configuration } from '../configuration{{extensionForDeno}}';
+import { RequestContext, HttpMethod, ResponseContext } from '../http/http{{extensionForDeno}}';
 {{#platforms}}
 {{#node}}
 import * as FormData from "form-data";
 {{/node}}
 {{/platforms}}
-import {ObjectSerializer} from '../models/ObjectSerializer{{extensionForDeno}}';
-import {ApiException} from './exception{{extensionForDeno}}';
-import {isCodeInRange} from '../util{{extensionForDeno}}';
+import { ObjectSerializer } from '../models/ObjectSerializer{{extensionForDeno}}';
+import { ApiException } from './exception{{extensionForDeno}}';
+import { isCodeInRange } from '../util{{extensionForDeno}}';
 {{#useInversify}}
 import { injectable } from "inversify";
 {{/useInversify}}
@@ -162,7 +162,9 @@ export class {{classname}}ResponseProcessor {
      * @throws ApiException if the response code was not in [200, 299]
      */
      public async {{nickname}}(response: ResponseContext): Promise<{{#returnType}}{{{returnType}}}{{/returnType}} {{^returnType}}void{{/returnType}}> {
+        {{^isBinary}}
         const contentType = ObjectSerializer.normalizeMediaType(response.headers["content-type"]);
+        {{/isBinary}}
         {{#responses}}
         if (isCodeInRange("{{code}}", response.httpStatusCode)) {
             {{#dataType}}

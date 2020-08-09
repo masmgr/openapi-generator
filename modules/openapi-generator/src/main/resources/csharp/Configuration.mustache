@@ -216,7 +216,7 @@ namespace {{packageName}}.Client
             }
         }
 
-        private String _basePath = null;
+        private string _basePath = null;
         /// <summary>
         /// Gets or sets the base path for API access.
         /// </summary>
@@ -409,9 +409,9 @@ namespace {{packageName}}.Client
         /// <summary>
         /// Returns a string with essential information for debugging.
         /// </summary>
-        public static String ToDebugReport()
+        public static string ToDebugReport()
         {
-            String report = "C# SDK ({{{packageName}}}) Debug Report:\n";
+            string report = "C# SDK ({{{packageName}}}) Debug Report:\n";
             {{^netStandard}}
             {{^supportsUWP}}
             report += "    OS: " + System.Environment.OSVersion + "\n";
